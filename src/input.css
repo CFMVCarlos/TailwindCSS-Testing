@@ -1,0 +1,42 @@
+@config "../tailwind.config.js";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  h3 {
+    @apply text-lg;
+  }
+  a {
+    @apply text-blue-600 underline;
+  }
+  p {
+    @apply my-4;
+    @apply mx-0;
+  }
+  div, button{
+    @apply my-5
+  }
+}
+
+@layer components {
+  .btn-blue {
+    @apply rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700;
+  }
+}
+
+@layer utilities {
+  .filter-none {
+    filter: none;
+  }
+  .filter-grayscale {
+    filter: grayscale(100%);
+  }
+}

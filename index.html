@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="en" class="font-sans">
+  <head>
+    <!-- Character encoding for the document -->
+    <meta charset="UTF-8" />
+    <!-- Viewport settings for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title of the document -->
+    <title>Tailwind CSS</title>
+    <!-- Link to the Tailwind CSS stylesheet -->
+    <link rel="stylesheet" href="./src/output.css" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+  </head>
+
+  <body class="m-3">
+    <!-- Heading -->
+    <h1 class="text-3xl font-bold underline">Hello world!</h1>
+
+    <!-- Button with rounded corners and hover effect -->
+    <p>
+      <button
+      class="rounded-full bg-sky-500 px-5 py-2 text-sm font-semibold leading-5 text-white hover:bg-sky-700"
+      >
+      Save changes
+      </button>
+    </p>
+
+    <!-- Button with hover, focus, and active states -->
+    <p>
+      <button
+      class="rounded-full bg-violet-300 px-5 py-2 text-sm font-semibold leading-5 text-white hover:bg-violet-500 focus:outline-none focus:ring focus:ring-violet-500 active:bg-violet-700"
+      >
+      Save changes
+      </button>
+    </p>
+
+    <!-- Table with header, body, and footer -->
+    <table>
+      <thead>
+      <tr class="bg-red-100">
+        <th class="px-4 py-2">Name</th>
+        <th class="px-4 py-2">Age</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr
+        class="first:text-red-500 last:text-blue-500 odd:bg-white even:bg-slate-500"
+      >
+        <td class="border px-4 py-2">John Doe</td>
+        <td class="border px-4 py-2">30</td>
+      </tr>
+      <tr
+        class="first:text-red-500 last:text-blue-500 odd:bg-white even:bg-slate-500"
+      >
+        <td class="border px-4 py-2">Jane Doe</td>
+        <td class="border px-4 py-2">25</td>
+      </tr>
+      <tr
+        class="first:text-red-500 last:text-blue-500 odd:bg-white even:bg-slate-500"
+      >
+        <td class="border px-4 py-2">John Smith</td>
+        <td class="border px-4 py-2">40</td>
+      </tr>
+      <tr
+        class="first:text-red-500 last:text-blue-500 odd:bg-white even:bg-slate-500"
+      >
+        <td class="border px-4 py-2">Jane Smith</td>
+        <td class="border px-4 py-2">35</td>
+      </tr>
+      <tr
+        class="first:text-red-500 last:text-blue-500 odd:bg-white even:bg-slate-500"
+      >
+        <td class="border px-4 py-2">John Smith</td>
+        <td class="border px-4 py-2">40</td>
+      </tr>
+      <tr
+        class="first:text-red-500 last:text-blue-500 odd:bg-white even:bg-slate-500"
+      >
+        <td class="border px-4 py-2">Jane Smith</td>
+        <td class="border px-4 py-2">35</td>
+      </tr>
+      </tbody>
+      <tfoot>
+      <tr class="bg-red-100">
+        <td class="border px-4 py-2">Total</td>
+        <td class="border px-4 py-2">55</td>
+      </tr>
+      </tfoot>
+    </table>
+
+    <!-- Link with hover effects -->
+    <a
+      href="#"
+      class="group mx-auto block max-w-xs space-y-3 rounded-lg bg-white p-6 shadow-lg ring-1 ring-slate-900/5 hover:bg-sky-500 hover:ring-sky-500"
+    >
+      <div class="flex items-center space-x-3">
+      <h3 class="text-sm font-semibold text-slate-900 group-hover:text-white">
+        New project
+      </h3>
+      </div>
+      <p class="text-sm text-slate-500 group-hover:text-white">
+      Create a new project from a variety of starting templates.
+      </p>
+    </a>
+
+    <!-- Form with email input and validation -->
+    <form>
+      <label for="email">
+      <span class="text-sm font-medium text-slate-700">Email</span>
+      <input
+        type="email"
+        name="email"
+        placeholder="Enter an email..."
+        class="peer border border-black text-blue-900 placeholder:text-red-300"
+      />
+      <p class="invisible mt-2 text-sm text-pink-600 peer-invalid:visible">
+        Please provide a valid email address.
+      </p>
+      </label>
+    </form>
+
+    <!-- Fieldset with radio buttons and conditional content -->
+    <fieldset class="m-2 border border-black p-2">
+      <legend>Published status</legend>
+
+      <input id="draft" class="peer/draft" type="radio" name="status" checked />
+      <label for="draft" class="peer-checked/draft:text-sky-500">Draft</label>
+
+      <input id="published" class="peer/published" type="radio" name="status" />
+      <label for="published" class="peer-checked/published:text-sky-500"
+      >Published</label
+      >
+
+      <div class="hidden peer-checked/draft:block">
+      Drafts are only visible to administrators.
+      </div>
+      <div class="hidden peer-checked/published:block">
+      Your post will be publicly visible on your site.
+      </div>
+    </fieldset>
+
+    <!-- Container for payment method selection -->
+    <div class="relative overflow-auto rounded-xl">
+      <div class="mx-auto max-w-md bg-white px-4 py-6 shadow">
+      <fieldset>
+        <legend class="text-base font-semibold text-slate-900 dark:text-slate-200">
+        Payment method
+        </legend>
+        <div class="mt-4 space-y-2">
+        <!-- Google Pay option -->
+        <label
+          for="apple"
+          class="grid grid-cols-[24px_1fr_auto] items-center gap-6 rounded-lg p-4 text-slate-700 ring-1 ring-transparent hover:bg-slate-100 has-[:checked]:bg-indigo-50 has-[:checked]:text-red-900 has-[:checked]:ring-red-200"
+        >
+          <svg class="w-8" fill="currentColor" viewBox="0 0 24 13">
+          <path></path>
+          </svg>
+          Google Pay
+          <input
+          name="payment_method"
+          id="apple"
+          value="google"
+          type="radio"
+          class="box-content h-1.5 w-1.5 appearance-none rounded-full border-[5px] border-white bg-white bg-clip-padding outline-none ring-1 ring-gray-950/10 checked:border-indigo-500 checked:ring-indigo-500"
+          checked=""
+          />
+        </label>
+        <!-- Apple Pay option -->
+        <label
+          for="google"
+          class="grid grid-cols-[24px_1fr_auto] items-center gap-6 rounded-lg p-4 text-slate-700 ring-1 ring-transparent hover:bg-slate-100 has-[:checked]:bg-indigo-50 has-[:checked]:text-red-900 has-[:checked]:ring-red-200"
+        >
+          <svg class="mt-1 w-8 fill-current" fill="currentColor" viewBox="0 0 24 13"></svg>
+          <path
+            d="M4.38526 1.86704C4.10401 2.19606 3.65392 2.45565 3.20387 2.41854C3.14762 1.97367 3.36793 1.50091 3.62579 1.20892C3.90704 0.870635 4.39932 0.62962 4.79781 0.611084C4.84468 1.07453 4.66182 1.52871 4.38526 1.86704ZM4.79312 2.50663C4.14146 2.46956 3.5836 2.87272 3.27418 2.87272C2.96012 2.87272 2.48659 2.52517 1.97092 2.53443C1.30056 2.5437 0.677025 2.91906 0.33479 3.51694C-0.368428 4.71265 0.151978 6.48308 0.831712 7.45632C1.16457 7.9383 1.56306 8.46662 2.0881 8.44809C2.58507 8.42955 2.78195 8.12834 3.38204 8.12834C3.98677 8.12834 4.16026 8.44809 4.68531 8.43882C5.2291 8.42955 5.57134 7.95688 5.9042 7.47485C6.28388 6.92799 6.43862 6.39499 6.44799 6.36718C6.43862 6.35791 5.3979 5.96402 5.38853 4.77753C5.37915 3.78576 6.20893 3.31304 6.24643 3.28524C5.77759 2.59931 5.04629 2.52517 4.79312 2.50663ZM8.55765 1.16258V8.38789H9.69212V5.91768H11.2626C12.6971 5.91768 13.7051 4.94445 13.7051 3.53552C13.7051 2.12664 12.7159 1.16262 11.3001 1.16262H8.5576L8.55765 1.16258ZM9.69212 2.10806H11.0001C11.9846 2.10806 12.5471 2.62711 12.5471 3.54011C12.5471 4.4531 11.9846 4.97684 10.9954 4.97684H9.69212V2.10806ZM15.7772 8.44345C16.4898 8.44345 17.1508 8.08664 17.4508 7.52119H17.4743V8.38785H18.5244V4.79143C18.5244 3.74868 17.6806 3.07666 16.3819 3.07666C15.1771 3.07666 14.2864 3.75795 14.2536 4.69412H15.2756C15.36 4.24921 15.7771 3.95722 16.3491 3.95722C17.043 3.95722 17.4321 4.27701 17.4321 4.86562V5.26415L16.0163 5.34756C14.6989 5.42634 13.9864 5.95934 13.9864 6.88629C13.9864 7.82245 14.7224 8.44345 15.7772 8.44345ZM16.0819 7.58607C15.4772 7.58607 15.0927 7.29876 15.0927 6.85844C15.0927 6.4043 15.4631 6.14012 16.171 6.09841L17.4321 6.01963V6.42743C17.4321 7.10408 16.8508 7.58607 16.0819 7.58607H16.0819ZM19.9261 10.3529C21.0325 10.3529 21.5529 9.93584 22.0076 8.67057L24 3.14617H22.8467L21.5107 7.41456H21.4872L20.1511 3.14617H18.9651L20.8871 8.40638L20.784 8.72618C20.6106 9.2684 20.3293 9.47698 19.8277 9.47698C19.7386 9.47698 19.5652 9.46771 19.4948 9.45844V10.3251C19.5604 10.3436 19.8417 10.3529 19.9261 10.3529Z"
+          ></path>
+          </svg>
+          Apple Pay
+          <input
+          name="payment_method"
+          id="google"
+          value="apple"
+          type="radio"
+          class="box-content h-1.5 w-1.5 appearance-none rounded-full border-[5px] border-white bg-white bg-clip-padding outline-none ring-1 ring-gray-950/10 checked:border-indigo-500 checked:ring-indigo-500"
+          />
+        </label>
+        <!-- Credit Card option -->
+        <label
+          for="credit-card"
+          class="grid grid-cols-[24px_1fr_auto] items-center gap-6 rounded-lg p-4 text-slate-700 ring-1 ring-transparent hover:bg-slate-100 has-[:checked]:bg-indigo-50 has-[:checked]:text-red-900 has-[:checked]:ring-red-200"
+        >
+          <svg class="w-8" viewBox="0 0 24 13" fill="none">
+          <rect
+            stroke="currentColor"
+            x="0.5"
+            y="0.5"
+            width="23"
+            height="11"
+            rx="1.5"
+          ></rect>
+          <path
+            fill="currentColor"
+                  rx="1.5"
+                ></rect>
+                <path
+                  fill="currentColor"
+                  d="M16.539 3.18591C16.0742 3.01652 15.5828 2.93152 15.088 2.93491C13.488 2.93491 12.358 3.74091 12.35 4.89791C12.34 5.74791 13.153 6.22691 13.768 6.51091C14.399 6.80291 14.61 6.98691 14.608 7.24791C14.604 7.64491 14.104 7.82491 13.639 7.82491C13 7.82491 12.651 7.73591 12.114 7.51291L11.915 7.41991L11.688 8.75191C12.077 8.91391 12.778 9.05291 13.502 9.06491C15.203 9.06491 16.315 8.26391 16.328 7.03291C16.342 6.35391 15.902 5.84091 14.976 5.41691C14.413 5.14191 14.064 4.95791 14.064 4.67891C14.064 4.43191 14.363 4.16791 14.988 4.16791C15.404 4.15785 15.8174 4.23589 16.201 4.39691L16.351 4.46391L16.578 3.17691L16.539 3.18591ZM20.691 3.04291H19.441C19.052 3.04291 18.759 3.14991 18.589 3.53591L16.185 8.98191H17.886L18.226 8.08891L20.302 8.09091C20.351 8.29991 20.501 8.98191 20.501 8.98191H22.001L20.691 3.04291ZM10.049 2.99291H11.67L10.656 8.93491H9.03705L10.049 2.99091V2.99291ZM5.93405 6.26791L6.10205 7.09291L7.68605 3.04291H9.40305L6.85205 8.97391H5.13905L3.73905 3.95191C3.71637 3.8691 3.66312 3.79798 3.59005 3.75291C3.08545 3.49225 2.55079 3.29444 1.99805 3.16391L2.02005 3.03891H4.62905C4.98305 3.05291 5.26805 3.16391 5.36305 3.54191L5.93305 6.27091L5.93405 6.26791ZM18.691 6.87391L19.337 5.21191C19.329 5.22991 19.47 4.86891 19.552 4.64591L19.663 5.15891L20.038 6.87291H18.69L18.691 6.87391Z"
+                ></path>
+              </svg>
+              Credit Card
+              <input
+                name="payment_method"
+                id="credit-card"
+                value="credit-card"
+                type="radio"
+                class="box-content h-1.5 w-1.5 appearance-none rounded-full border-[5px] border-white bg-white bg-clip-padding outline-none ring-1 ring-gray-950/10 checked:border-indigo-500 checked:ring-indigo-500"
+              />
+            </label>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+
+    <label>
+      <span
+        class="text-sm font-medium text-slate-700 after:ml-0.5 after:text-red-500 after:content-['*']"
+      >
+        Email
+      </span>
+      <input
+        type="email"
+        name="email"
+        class="mt-1 w-3/4 rounded-md border border-slate-300 bg-white px-3 py-2 placeholder-slate-400 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm"
+        placeholder="you@example.com"
+      />
+    </label>
+
+    <ul
+      role="list"
+      class="m-2 list-disc space-y-3 pl-5 text-slate-400 marker:text-sky-400"
+    >
+      <li>5 cups chopped Porcini mushrooms</li>
+      <li>1/2 cup of olive oil</li>
+      <li>3lb of celery</li>
+    </ul>
+
+    <!-- Container with selection and first-letter/first-line styles -->
+    <div
+      class="border border-violet-500 p-2 selection:bg-fuchsia-300 selection:text-fuchsia-900"
+    >
+      <p
+        class="first-letter:float-left first-letter:pr-2 first-letter:text-5xl first-line:uppercase"
+      >
+        So I started to walk into the water. I won't lie to you boys, I was
+        terrified. But I pressed on, and as I made my way past the breakers a
+        strange calm came over me. I don't know if it was divine intervention or
+        the kinship of all living things but I tell you Jerry at that moment, I
+        <em>was</em> a marine biologist.
+      </p>
+    </div>
+
+    <!-- Container with portrait and landscape hidden elements -->
+    <div>
+      <div class="portrait:hidden">
+        <p>
+          This experience is designed to be viewed in portrait. Please rotate
+          your device to view the site.
+        </p>
+      </div>
+      <div class="mx landscape:hidden">
+        <p>
+          This experience is designed to be viewed in landscape. Please rotate
+          your device to view the site.
+        </p>
+      </div>
+    </div>
+
+    <!-- Container with grid layout and box-decoration styles -->
+    <div
+      class="grid grid-cols-1 gap-10 px-10 font-mono font-bold sm:grid-cols-2"
+    >
+      <div class="flex flex-col">
+        <p
+          class="mb-3 font-mono text-sm font-medium text-slate-500 dark:text-slate-400"
+        >
+          box-decoration-slice
+        </p>
+        <div
+          class="font-sans text-5xl font-extrabold leading-none tracking-tight"
+        >
+          <span
+            class="bg-gradient-to-r from-indigo-600 to-pink-500 box-decoration-slice px-2 leading-[3.5rem] text-white hover:box-decoration-clone"
+          >
+            Hello<br />
+            World
+          </span>
+        </div>
+      </div>
+      <div class="flex flex-col">
+        <p
+          class="mb-3 font-mono text-sm font-medium text-slate-500 dark:text-slate-400"
+        >
+          box-decoration-clone
+        </p>
+        <div
+          class="font-sans text-5xl font-extrabold leading-none tracking-tight"
+        >
+          <span
+            class="bg-gradient-to-r from-indigo-600 to-pink-500 box-decoration-clone px-2 leading-[3.5rem] text-white hover:box-decoration-slice"
+          >
+            Hello<br />
+            World
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Container with flex items -->
+    <div class="-mb-3 mt-4">
+      <div
+      class="not-prose relative overflow-hidden rounded-xl bg-slate-50 dark:bg-slate-800/25"
+      >
+      <div
+        class="bg-grid-slate-100 dark:bg-grid-slate-700/25 absolute inset-0 [mask-image:linear-gradient(0deg,#fff,rgba(255,255,255,0.6))] dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.5))]"
+        style="background-position: 10px 10px"
+      ></div>
+      <div class="relative overflow-auto rounded-xl p-8">
+        <div
+        class="flex flex-row space-x-4 font-mono text-sm font-bold leading-6 text-white"
+        >
+        <div
+          class="flex h-14 basis-1/3 items-center justify-center rounded-lg bg-fuchsia-500 shadow-lg hover:basis-1/2"
+        >
+          01
+        </div>
+        <div
+          class="flex h-14 basis-1/3 items-center justify-center rounded-lg bg-fuchsia-500 shadow-lg hover:basis-1/2"
+        >
+          02
+        </div>
+        <div
+          class="flex h-14 basis-1/3 items-center justify-center rounded-lg bg-fuchsia-500 shadow-lg hover:basis-1/2"
+        >
+          03
+        </div>
+        </div>
+      </div>
+      <div
+        class="pointer-events-none absolute inset-0 rounded-xl border border-black/5 dark:border-white/5"
+      ></div>
+      </div>
+    </div>
+
+    <!-- Container with grid items -->
+    <div class="-mb-3 mt-4">
+      <div
+      class="not-prose relative overflow-hidden rounded-xl bg-slate-50 dark:bg-slate-800/25"
+      >
+      <div
+        class="bg-grid-slate-100 dark:bg-grid-slate-700/25 absolute inset-0 [mask-image:linear-gradient(0deg,#fff,rgba(255,255,255,0.6))] dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.5))]"
+        style="background-position: 10px 10px"
+      ></div>
+      <div class="relative overflow-auto rounded-xl p-8">
+        <div
+        class="grid grid-cols-6 gap-4 text-center font-mono text-sm font-bold leading-6 text-white"
+        >
+        <div class="bg-stripes-sky rounded-lg p-4"></div>
+        <div
+          class="col-span-4 col-start-2 rounded-lg bg-sky-500 p-4 shadow-lg"
+        >
+          01
+        </div>
+        <div class="bg-stripes-sky rounded-lg p-4"></div>
+        <div
+          class="col-start-1 col-end-3 rounded-lg bg-sky-500 p-4 shadow-lg"
+        >
+          02
+        </div>
+        <div class="bg-stripes-sky rounded-lg p-4"></div>
+        <div class="bg-stripes-sky rounded-lg p-4"></div>
+        <div
+          class="col-span-2 col-end-7 rounded-lg bg-sky-500 p-4 shadow-lg"
+        >
+          03
+        </div>
+        <div
+          class="col-start-1 col-end-7 rounded-lg bg-sky-500 p-4 shadow-lg"
+        >
+          04
+        </div>
+        </div>
+      </div>
+      <div
+        class="pointer-events-none absolute inset-0 rounded-xl border border-black/5 dark:border-white/5"
+      ></div>
+      </div>
+    </div>
+
+    <!-- Container with different sizes of divs -->
+    <div class="-mb-3 mt-4">
+      <div
+      class="not-prose relative overflow-hidden rounded-xl bg-slate-50 dark:bg-slate-800/25"
+      >
+      <div
+        class="bg-grid-slate-100 dark:bg-grid-slate-700/25 absolute inset-0 [mask-image:linear-gradient(0deg,#fff,rgba(255,255,255,0.6))] dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.5))]"
+        style="background-position: 10px 10px"
+      ></div>
+      <div class="relative overflow-auto rounded-xl p-8">
+        <div
+        class="grid grid-flow-col justify-center gap-4 text-center font-mono text-xs font-bold text-white"
+        >
+        <div
+          class="grid size-16 items-center justify-center rounded-lg bg-blue-500 shadow-lg"
+        >
+          size-16
+        </div>
+        <div
+          class="grid size-20 items-center justify-center rounded-lg bg-blue-500 shadow-lg"
+        >
+          size-20
+        </div>
+        <div
+          class="grid size-24 items-center justify-center rounded-lg bg-blue-500 shadow-lg"
+        >
+          size-24
+        </div>
+        <div
+          class="hidden size-32 items-center justify-center rounded-lg bg-blue-500 shadow-lg sm:grid"
+        >
+          size-32
+        </div>
+        <div
+          class="hidden size-40 items-center justify-center rounded-lg bg-blue-500 shadow-lg md:grid"
+        >
+          size-40
+        </div>
+        </div>
+      </div>
+      <div
+        class="pointer-events-none absolute inset-0 rounded-xl border border-black/5 dark:border-white/5"
+      ></div>
+      </div>
+    </div>
+    <br /><br /><br /><br /><br />
+    <!-- Article with time, heading, and paragraph -->
+    <article class="border border-solid border-black p-2">
+      <time>Mar 10, 2020</time>
+      <h2>Boost your conversion rate</h2>
+      <p class="line-clamp-3 hover:line-clamp-none">
+      Nulla dolor velit adipisicing duis excepteur esse in duis nostrud
+      occaecat mollit incididunt deserunt sunt. Ut ut sunt laborum ex occaecat
+      eu tempor labore enim adipisicing minim ad. Est in quis eu dolore
+      occaecat excepteur fugiat dolore nisi aliqua fugiat enim ut cillum.
+      Labore enim duis nostrud eu. Est ut eiusmod consequat irure quis
+      deserunt ex. Enim laboris dolor magna pariatur. Dolor et ad sint
+      voluptate sunt elit mollit officia ad enim sit consectetur enim.
+      </p>
+    </article>
+
+    <!-- Section with different opacity levels of text -->
+    <section class="bg-slate-800">
+      <p class="text-sky-400/100">The quick brown fox...</p>
+      <p class="text-sky-400/75">The quick brown fox...</p>
+      <p class="text-sky-400/50">The quick brown fox...</p>
+      <p class="text-sky-400/25">The quick brown fox...</p>
+      <p class="text-sky-400/0">The quick brown fox...</p>
+    </section>
+
+    <!-- Container with gradient divs -->
+    <div
+      class="border-2 border-solid border-black [&_div]:m-2 [&_div]:rounded-lg"
+    >
+      <!-- Gradient div 1 -->
+      <div
+      class="h-14 bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-l"
+      ></div>
+      <!-- Gradient div 2 -->
+      <div
+      class="h-14 bg-gradient-to-r from-sky-500 to-indigo-500 hover:bg-gradient-to-l"
+      ></div>
+      <!-- Gradient div 3 -->
+      <div
+      class="h-14 bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:bg-gradient-to-l"
+      ></div>
+      <!-- Gradient div 4 -->
+      <div
+      class="h-14 bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l"
+      ></div>
+    </div>
+
+    <!-- Container with gradient progress bar -->
+    <div class="-mb-3 mt-4">
+      <div
+      class="not-prose relative overflow-hidden rounded-xl bg-slate-50 dark:bg-slate-800/25"
+      >
+      <div
+        class="bg-grid-slate-100 dark:bg-grid-slate-700/25 absolute inset-0 [mask-image:linear-gradient(0deg,#fff,rgba(255,255,255,0.6))] dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.5))]"
+        style="background-position: 10px 10px"
+      ></div>
+      <div class="relative overflow-auto rounded-xl p-8">
+        <div class="mx-5"></div>
+        <div class="relative h-[3.625rem]"></div>
+          <!-- Gradient stop 1 -->
+          <div
+          class="absolute left-[10%] top-0 -ml-4 flex h-12 flex-col items-center"
+          >
+          <svg
+            viewBox="0 0 32 34"
+            class="w-8 flex-none fill-indigo-500 drop-shadow"
+          >
+            <use href="#gradient-color-stop"></use>
+          </svg>
+          <div
+            class="mt-2 h-2 w-0.5 bg-gray-900/30 dark:bg-white/30"
+          ></div>
+          <div
+            class="absolute left-0 top-0 flex h-8 w-full items-center justify-center font-mono text-[0.6875rem] font-semibold text-white"
+          >
+            10%
+          </div>
+          </div>
+          <!-- Gradient stop 2 -->
+          <div
+          class="absolute left-[30%] top-0 -ml-4 flex h-12 flex-col items-center"
+          >
+          <svg
+            viewBox="0 0 32 34"
+            class="w-8 flex-none fill-sky-500 drop-shadow"
+          >
+            <use href="#gradient-color-stop"></use>
+          </svg>
+          <div
+            class="mt-2 h-2 w-0.5 bg-gray-900/30 dark:bg-white/30"
+          ></div>
+          <div
+            class="absolute left-0 top-0 flex h-8 w-full items-center justify-center font-mono text-[0.6875rem] font-semibold text-white"
+          >
+            30%
+          </div>
+          </div>
+          <!-- Gradient stop 3 -->
+          <div
+          class="absolute right-[10%] top-0 -mr-4 flex h-12 flex-col items-center"
+          >
+          <svg
+            viewBox="0 0 32 34"
+            class="w-8 flex-none fill-emerald-500 drop-shadow"
+          >
+            <use href="#gradient-color-stop"></use>
+          </svg>
+          <div
+            class="mt-2 h-2 w-0.5 bg-gray-900/30 dark:bg-white/30"
+          ></div>
+          <div
+            class="absolute left-0 top-0 flex h-8 w-full items-center justify-center font-mono text-[0.6875rem] font-semibold text-white"
+          >
+            90%
+          </div>
+          </div>
+        </div>
+        <!-- Gradient progress bar -->
+        <div
+          class="h-10 rounded-lg bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%"
+        ></div>
+        </div>
+      </div>
+      <div
+        class="pointer-events-none absolute inset-0 rounded-xl border border-black/5 dark:border-white/5"
+      ></div>
+      </div>
+    </div>
+
+    <!-- Button with transition delay -->
+    <button
+      class="m-3 bg-blue-500 transition-colors delay-500 duration-500 ease-in-out hover:bg-red-500"
+    >
+      Save Changes
+    </button>
+    <!-- Button with shorter transition duration -->
+    <button
+      class="m-3 bg-blue-500 transition-colors duration-300 hover:bg-red-500"
+    >
+      Save Changes
+    </button>
+
+    <!-- Divs with different animations -->
+    <div class="m-3 flex justify-center gap-5">
+      <div class="h-10 w-10 animate-spin bg-sky-600"></div>
+      <div class="h-10 w-10 animate-ping bg-sky-600"></div>
+      <div class="h-10 w-10 animate-pulse bg-sky-600"></div>
+      <div class="h-10 w-10 animate-bounce bg-sky-600"></div>
+      <div class="h-10 w-10 animate-spin-slow bg-sky-600"></div>
+      <div class="h-10 w-10 animate-wiggle bg-sky-600"></div>
+    </div>
+
+    <!-- Form with checkboxes and text input -->
+    <form
+      action="#"
+      class="mt-4 rounded-lg border border-solid border-black p-4"
+    >
+      <fieldset>
+      <legend class="flex justify-center font-bold">
+        Checkboxes and Radio background color
+      </legend>
+      <!-- Default checkbox -->
+      <label> <input type="checkbox" checked /> Browser default </label>
+      <!-- Customized checkbox with hover effect -->
+      <label>
+        <input
+        type="checkbox"
+        class="accent-pink-500 hover:accent-yellow-500"
+        checked
+        />
+        Customized
+      </label>
+      <!-- Customized checkbox with focus effect -->
+      <label>
+        <input
+        type="checkbox"
+        class="accent-emerald-500 focus:accent-red-500"
+        checked
+        />
+        Alpha
+      </label>
+      </fieldset>
+
+      <fieldset>
+      <legend class="font-bold">Text input cursor color</legend>
+      <!-- Textarea with custom caret color -->
+      <label
+        >Input cursor will change color:<textarea
+        class="h-[2em] max-h-[10em] min-h-[2em] w-full resize-y caret-red-500"
+        ></textarea>
+      </label>
+      </fieldset>
+    </form>
+
+    <!-- Dropdown with default browser styles -->
+    <div class="relative overflow-auto rounded-xl bg-slate-500 p-8">
+      <div class="mx-auto max-w-sm items-center">
+      <div class="my-6 flex">
+        <select class="w-20">
+        <option>Yes</option>
+        <option>No</option>
+        <option>Maybe</option>
+        </select>
+        <div
+        class="mx-6 text-sm font-semibold text-slate-900 dark:text-slate-200"
+        >
+        Default browser styles applied
+        </div>
+      </div>
+      <!-- Dropdown with custom styles -->
+      <div class="my-6 flex items-center">
+        <div class="grid">
+        <svg
+          class="pointer-events-none relative right-1 z-10 col-start-1 row-start-1 h-4 w-4 self-center justify-self-end forced-colors:hidden"
+          viewBox="0 0 16 16"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+          fill-rule="evenodd"
+          d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"
+          clip-rule="evenodd"
+          ></path>
+        </svg>
+        <select
+          class="col-start-1 row-start-1 w-20 appearance-none rounded-lg border border-slate-300 bg-slate-50 px-2 text-slate-700 hover:border-cyan-500 hover:bg-white dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-cyan-700 dark:hover:bg-slate-700 forced-colors:appearance-auto"
+        >
+          <option>Yes</option>
+          <option>No</option>
+          <option>Maybe</option>
+        </select>
+        </div>
+        <div
+        class="mx-6 text-sm font-semibold text-slate-900 dark:text-slate-200"
+        >
+        Remove default browser styles
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- Divs with orange dividers -->
+    <div class="mt-2 divide-y-8 divide-orange-300">
+      <div class="size-24 border-solid border-transparent bg-blue-500">
+      &nbsp;
+      </div>
+      <div class="size-24 border-solid border-transparent bg-blue-500">
+      &nbsp;
+      </div>
+      <div class="size-24 border-solid border-transparent bg-blue-500">
+      &nbsp;
+      </div>
+      <div class="size-24 border-solid border-transparent bg-blue-500">
+      &nbsp;
+      </div>
+      <div class="size-24 border-solid border-transparent bg-blue-500">
+      &nbsp;
+      </div>
+    </div>
+  </body>
+</html>
